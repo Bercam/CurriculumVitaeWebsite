@@ -1,0 +1,10 @@
+{
+  "description": "Showcases a developer's minimalist interactive resume with seamless language switching between Brazilian Portuguese and English for global accessibility.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

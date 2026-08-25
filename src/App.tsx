@@ -52,6 +52,13 @@ const PRINCIPLE_REPO: Record<string, string> = {
   "Escalabilidade": "https://github.com/Bercam/BankCore",
 };
 
+/* ─── base URL helper ─── */
+const BASE = import.meta.env.BASE_URL;
+function asset(path: string) {
+  // Strips any leading slash from `path` so it joins cleanly with BASE.
+  return `${BASE}${path.replace(/^\//, "")}`;
+}
+
 const CONTENT = {
   pt: {
     nav: [
@@ -101,8 +108,8 @@ const CONTENT = {
     contact: { heading: "Contato", subtitle: "Disponível para novas oportunidades." },
     docs: {
       heading: "Documentos",
-      resume: { label: "Currículo", desc: "Pedro Berçam — Versão PT-BR", url: "/Pedro_Bercam_Curriculo.pdf", filename: "Pedro_Bercam_Curriculo.pdf", modalLabel: "Currículo — PT-BR" },
-      cover:  { label: "Carta de Apresentação", desc: "Pedro Berçam — Versão PT-BR", url: "/Carta_de_Apresentacao_Pedro_Bercam.pdf", filename: "Carta_de_Apresentacao_Pedro_Bercam.pdf", modalLabel: "Carta de Apresentação — PT-BR" },
+      resume: { label: "Currículo", desc: "Pedro Berçam — Versão PT-BR", url: asset("Pedro_Bercam_Curriculo.pdf"), filename: "Pedro_Bercam_Curriculo.pdf", modalLabel: "Currículo — PT-BR" },
+      cover:  { label: "Carta de Apresentação", desc: "Pedro Berçam — Versão PT-BR", url: asset("Carta_de_Apresentacao_Pedro_Bercam.pdf"), filename: "Carta_de_Apresentacao_Pedro_Bercam.pdf", modalLabel: "Carta de Apresentação — PT-BR" },
     },
   },
   en: {
@@ -153,8 +160,8 @@ const CONTENT = {
     contact: { heading: "Contact", subtitle: "Open to new opportunities." },
     docs: {
       heading: "Documents",
-      resume: { label: "Resume", desc: "Pedro Berçam — English version", url: "/Pedro_Bercam_Resume.pdf", filename: "Pedro_Bercam_Resume.pdf", modalLabel: "Resume — English" },
-      cover:  { label: "Cover Letter", desc: "Pedro Berçam — English version", url: "/Cover_Letter_Pedro_Bercam.pdf", filename: "Cover_Letter_Pedro_Bercam.pdf", modalLabel: "Cover Letter — English" },
+      resume: { label: "Resume", desc: "Pedro Berçam — English version", url: asset("Pedro_Bercam_Resume.pdf"), filename: "Pedro_Bercam_Resume.pdf", modalLabel: "Resume — English" },
+      cover:  { label: "Cover Letter", desc: "Pedro Berçam — English version", url: asset("Cover_Letter_Pedro_Bercam.pdf"), filename: "Cover_Letter_Pedro_Bercam.pdf", modalLabel: "Cover Letter — English" },
     },
   },
 } as const;
